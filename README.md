@@ -44,6 +44,8 @@ Required segment write key:
 
 segment_io:
     write_key: "%env(SEGMENTIO_KEY)%"  # add your key
+    sources: # provide the sources if you need to send events to different sources
+        - {name: source_name, write_key: key_here} # Here you provide a name and write key for a source
     guest_id: "guest" # default guest. Guest id for annotation Track and Page
     env: prod #default prod. Can be prod (sending to segment) and dev (not sending)
     options:
@@ -63,6 +65,8 @@ segment_io:
 
     segment_io:
         write_key: "%your_key%" #add your key
+        sources: # provide the sources if you need to send events to different sources
+            - {name: source_name, write_key: key_here} # Here you provide a name and write key for a source
         guest_id: "guest" # default guest. Guest id for annotation Track and Page
         env: prod #default prod. Can be prod (sending to segment) and dev (not sending)
         options:
